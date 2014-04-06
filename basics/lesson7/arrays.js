@@ -1,0 +1,11 @@
+var name1 = ["Max", "Nadya", "Polina"];
+document.write("Array 1: " + name1);
+var name2 = name1.reverse();
+document.write("<br>");
+document.write("Array 2: " + name2);
+document.write("<br>");
+document.write("Concatenation: " + name1.concat(name2));
+document.write("<br>");
+document.write("Joining: " + name1.join(name2, ", "));
+document.write("<br>");
+document.write("Sorting", name1.sort());
