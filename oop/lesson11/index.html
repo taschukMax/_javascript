@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="toolbar.css">
+    <title>Simple Toolbar</title>
+</head>
+<body>
+<h1>Simple Toolbar</h1>
+
+<div id="myToolbar" class="toolbar">
+    <span class="toolbar-item"></span>
+    <span class="toolbar-item"></span>
+    <span class="toolbar-item"></span>
+</div>
+<script type="text/javascript" src="eventtarget.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+<script type="text/javascript">
+    var toolbar = oojs.createToolbar("myToolbar");
+    toolbar.addListener("itemremoved", function (evt) {
+        alert(evt.type)
+    });
+    toolbar.items[0].addListener("enabledchanged", function (evt) {
+        alert(evt.type)
+    });
+</script>
+</body>
+</html>

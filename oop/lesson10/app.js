@@ -1,8 +1,3 @@
-/**
- * User: maksym.tashchuk
- * Date: 4/11/14
- * Time: 5:05 PM
- */
 var Person = function (firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -28,12 +23,12 @@ var Employee = function (firstName, lastName, position) {
     this.position = position;
 };
 Employee.prototype = Object.create(Person.prototype, {
-    sayHi: {
-        value: function () {
-                return Person.prototype.sayHi.call(this) + " My name is " + this.fullName;
-        },
-        enumerable: true
-    },
+    /* sayHi: {
+     value: function () {
+     return Person.prototype.sayHi.call(this) + " My name is " + this.fullName;
+     },
+     enumerable: true
+     },   */
     fullName: {
         get: (function () {
             var desc = Object.getOwnPropertyDescriptor(Person.prototype, "fullName").get;
@@ -46,4 +41,9 @@ Employee.prototype = Object.create(Person.prototype, {
 });
 var johnDoe = new Employee("John", "Doe", "Manager");
 document.write(johnDoe.sayHi());
-document.write(johnDoe.fullName);
+
+if (johnDoe.hasOwnProperty("toString")) {
+
+} else if (johnDoe.__proto__.hasOwnProperty("toString")) {
+
+}

@@ -15,18 +15,15 @@ Object.defineProperty(person, "fullName", {
 });
 
 var employee = Object.create(person, {
-        sayHi: {
-            value: function () {
-                return this.__proto__.sayHi.call(this) + " My name is " + this.fullName
-            },
-            writable: false,
-            enumerable: true
-        }
-    })
-    ;
+    sayHi: {
+        value: function () {
+            return this.__proto__.sayHi.call(this) + " My name is " + this.fullName
+        },
+        writable: false,
+        enumerable: true
+    }
+});
 
 person.sayHi = function () {
     return "Hi there";
 };
-
-document.write(employee.sayHi());
